@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notely — a quiet place to think</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C3A32'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-style='italic' fill='%23F4EFE6' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">N</span>
+      <span class="brand-name">Notely</span>
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">◐</button>
+    </div>
+
+    <button class="new-btn" id="newBtn">+ New note</button>
+
+    <div class="search-wrap">
+      <input type="search" id="search" placeholder="Search notes…" autocomplete="off">
+    </div>
+
+    <div class="tags" id="tagList"></div>
+
+    <div class="note-list" id="noteList"></div>
+  </aside>
+
+  <main class="pane">
+    <div class="empty-state" id="emptyState">
+      <div class="empty-quote">“</div>
+      <h2>A quiet place to write.</h2>
+      <p>Select a note, or create a new one.</p>
+    </div>
+
+    <div class="editor hidden" id="editor">
+      <div class="editor-head">
+        <input type="text" id="title" placeholder="Untitled" spellcheck="false">
+        <div class="head-actions">
+          <span class="meta" id="meta"></span>
+          <button class="ghost-btn" id="previewToggle">Preview</button>
+          <button class="ghost-btn danger" id="deleteBtn">Delete</button>
+        </div>
+      </div>
+      <div class="editor-body">
+        <textarea id="body" placeholder="Start writing in Markdown…" spellcheck="false"></textarea>
+        <div class="preview" id="preview"><div class="markdown" id="md"></div></div>
+      </div>
+    </div>
+  </main>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>
